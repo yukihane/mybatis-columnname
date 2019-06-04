@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <typeHandlers>
+    <typeHandler handler="com.github.yukihane.mybatis.ColumnNameTest$TestStringTypeHandler" />
+  </typeHandlers>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC" />
+      <dataSource type="UNPOOLED">
+        <property name="driver" value="org.h2.Driver" />
+        <property name="url" value="jdbc:h2:mem:mydb;DB_CLOSE_DELAY=-1" />
+        <property name="username" value="sa" />
+        <property name="password" value="" />
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper class="com.github.yukihane.mybatis.ColumnNameTest$TestMapper"/>
+  </mappers>
+</configuration>
